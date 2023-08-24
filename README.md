@@ -76,3 +76,31 @@ commit your staged content as a new commit snapshot.
 git commit -a -m "descriptive message"
 ```
 more efficent shortcut if you want to skip the **`add`** command, you can just go straight to **`git commit`** and use **`-a`** flag which will add all the files in the corrent working directory, the add a message after that to wrap-up the entire process in a single command.
+
+---
+
+### **CONNECT TO REPOSITORY FROM LOCAL**
+from your GitHub account create a new repository and give it a name of what ever you like, once you create it, GitHub will initializing an empty **remote** repository and give you some instruction how to connect it localy.
+the only thing you need is the [URL] to the repository, so go ahead and copy it. 
+```
+git remote
+``` 
+this will tell you which remote repositories you have linked to your local project.  
+to connect our local code to GitHub we're going to run '``
+`git remote add` followed by two values, the first value is the name of the remote repository which tipically has the name of **origin** because it will serve as the main source of truth of our code, and the second value is the [url] to it that we copied from GitHub.
+
+```
+git remote add origin [url]
+```
+now our local code is linked up to that remote repository, and if we run `git remote` again it should list out **origin** and if you type **`-v`** after that it will provide **url** as well.
+```
+git remote -v
+```
+and if you want more information you can use:
+```
+git remote show [repository name]
+```
+which show additional informations like **branches** and things like that.  
+Now that we have remote repo on GitHub we're going to sync-up our local code with it.
+
+---
