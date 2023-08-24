@@ -228,3 +228,17 @@ git log --stat -M
 show all commit logs with indication of any paths that moved.
 
 ---
+### **IGNORING PATTERNS**
+Preventing unintentional staging or commiting of files.  
+```
+logs/
+*.notes
+pattern*/
+```
+Save a file with desired patterns as **[.gitignore]** with either direct string matches or wildcard globs.
+```
+git config --global core.excludesfile [file]
+```
+system wide ignore pattern for all local repositories.
+
+---
