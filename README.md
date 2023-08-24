@@ -105,7 +105,7 @@ Now that we have remote repo on GitHub we're going to sync-up our local code wit
 ---
 
 ### **SHARE & UPDATE**
-Retrieving updates from another repository and updating local reppos.  
+Retrieving updates from another repository and updating local repos.  
 ```
 git remote add [alias] [url]
 ```
@@ -130,5 +130,50 @@ You can also add a **`-u`** flag at the end of this command and set the repo tha
 git pull
 ```
 fetch and merge any commits from the tracking remote branch.
+
+---
+### **BRANCH & MERGE**
+Isolating work in branches, changing context, and integrating changes.
+```
+git branch
+```
+list your branches. a __*__ will appear next to the currently active branch.
+```
+git branch -M [new-name]
+```
+you can rename your active branch by this command.
+```
+git branch [branch-name]
+```
+create new branch at the current commit.
+```
+git branch -d [branch-name]
+```
+**delete** a branch by using a lower-case **`-d`** flag, it will do it in a safe manner and only deleted the branch if it merged to the **main** branch and if it has no changes on it.
+```
+git branch -D [branch-name]
+```
+forcing to delete a branch, so be careful with it 😁.
+```
+git checkout -b [branch-name]
+```
+if you are in the **main** branch and you want to create and switch to a new branch at the same time.  
+kinda like **`git pull`** that just combinds two commands into one.
+```
+git checkout -
+```
+returns you to the previous branch.
+```
+git checkout [branch-name]
+```
+switch to another branch and check it out into your working directory.
+```
+git merge [branch]
+```
+merge the specified branch's history into the current one.
+```
+git log
+```
+show all commits in the current branch's history.
 
 ---
