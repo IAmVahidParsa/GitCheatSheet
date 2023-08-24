@@ -5,7 +5,7 @@ Git is the free and open-source distributed version control system that's respon
 Configuring user information used across all local repositories  .
 One of the ost important concepts is collabration and in order to collabrate you have to identify who you are.  
 The way we do that is by modifying **git config**.  
-We can look at corrent **config list** by typing:  
+We can look at current **config list** by typing:  
 ```
 git config --list
 ```
@@ -51,7 +51,7 @@ add a file as it looks now to your next commit (stage).
 ```
 git add .
 ```
-representing all the files in the corrent working directory or any other files that changed since the last commit.
+representing all the files in the current working directory or any other files that changed since the last commit.
 ```
 git reset [file]
 ```
@@ -75,7 +75,7 @@ commit your staged content as a new commit snapshot.
 ```
 git commit -a -m "descriptive message"
 ```
-more efficent shortcut if you want to skip the **`add`** command, you can just go straight to **`git commit`** and use **`-a`** flag which will add all the files in the corrent working directory, the add a message after that to wrap-up the entire process in a single command.
+more efficent shortcut if you want to skip the **`add`** command, you can just go straight to **`git commit`** and use **`-a`** flag which will add all the files in the current working directory, the add a message after that to wrap-up the entire process in a single command.
 
 ---
 
@@ -86,13 +86,12 @@ the only thing you need is the [URL] to the repository, so go ahead and copy it.
 git remote
 ``` 
 this will tell you which remote repositories you have linked to your local project.  
-to connect our local code to GitHub we're going to run '``
-`git remote add` followed by two values, the first value is the name of the remote repository which tipically has the name of **origin** because it will serve as the main source of truth of our code, and the second value is the [url] to it that we copied from GitHub.
+to connect our local code to GitHub we're going to run **`git remote add`** followed by two values, the first value is the name of the remote repository which tipically has the name of **origin** because it will serve as the main source of truth of our code, and the second value is the [url] to it that we copied from GitHub.
 
 ```
 git remote add origin [url]
 ```
-now our local code is linked up to that remote repository, and if we run `git remote` again it should list out **origin** and if you type **`-v`** after that it will provide **url** as well.
+now our local code is linked up to that remote repository, and if we run **`git remote`** again it should list out **origin** and if you type **`-v`** after that it will provide **url** as well.
 ```
 git remote -v
 ```
@@ -102,5 +101,34 @@ git remote show [repository name]
 ```
 which show additional informations like **branches** and things like that.  
 Now that we have remote repo on GitHub we're going to sync-up our local code with it.
+
+---
+
+### **SHARE & UPDATE**
+Retrieving updates from another repository and updating local reppos.  
+```
+git remote add [alias] [url]
+```
+add a git **URL** as an alias.
+```
+git fetch [alias]
+```
+fetch down all the branches from that Git remote.
+```
+git merge [alias]/[branch]
+```
+merge a remote branch into your current branch to bring it up to date.
+
+```
+git push [alias] [branch]
+```
+Transmit local branch commits to the remote repository branch.  
+You can also add a **`-u`** flag at the end of this command and set the repo that mentioned to upstream remote in that git config file. It's allow us to use the command **`git pull`** without the requiring in any additional arguments.  
+
+>**Note:** you wanna use **`-u`** flag when the remote repository is the final source of trouth (origin).
+```
+git pull
+```
+fetch and merge any commits from the tracking remote branch.
 
 ---
