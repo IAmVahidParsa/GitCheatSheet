@@ -242,3 +242,37 @@ git config --global core.excludesfile [file]
 system wide ignore pattern for all local repositories.
 
 ---
+### **REWRITE HISTORY**
+Rewriting branches, updating commits and clearing history.
+```
+git reset --hard [commit-hash-id]
+```
+clear staging area, rewrite working tree from specified commit.
+> **Note:** You should never do a **reset** when that commit has already been pushed to the reomte repository on GitHub.  
+The safer way to undo these changes at that case to first run `git log` and find the **id** of that bad commit, copy it and then run:
+```
+git revert [bad-commit-id]
+```
+the difference here is that bad commit was not actualy lost, it's still in the commits history.  
+Now we can push this new commit to the repo without causing issues for other team members.  
+> `git reset` is perfectly fine to use when you working on your own local project.
+```
+git commit --amend -m "new message"
+```
+If you make a minor mistake like a having typo in a commit message or forget stage a file with your commit, you can modify it without using `revert` or `reset`.  
+
+```
+git add .
+git commit --amend --no-edit
+```
+If I also deside that I want to include that stage file I can add it to the staging area like this to keep the existing commit message that already there.  
+```
+git rabase [branch]
+```
+apply any commits of current branch ahead of specified one.
+```
+git rebase main --interactive
+```
+Is that you take multiple commits and just combine them into one single commit with a single message.
+
+---
