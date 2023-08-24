@@ -276,3 +276,31 @@ git rebase main --interactive
 Is that you take multiple commits and just combine them into one single commit with a single message.
 
 ---
+### **TEMPORARY COMMITS**
+Temporarily store modified, tracked files in order to change branches.
+```
+git stash
+```
+save modified and stage changes.
+```
+git stash pop
+```
+write workig from top of stash stack.
+```
+git stash save [name]
+```
+Give stash a name to refer to it anytime you want.
+```
+git stash list
+```
+list stash-order of stashed file changes.
+```
+git stash apply [stash-id]
+```
+refer to specified stash by id from stash-list.
+```
+git stash drop
+```
+discard the changes from top of stash stack.
+
+---
