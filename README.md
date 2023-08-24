@@ -177,3 +177,38 @@ git log
 show all commits in the current branch's history.
 
 ---
+### **INSPECT & COMPARE**
+Examining logs, diffs and object information.  
+#### Merge Conflict
+A Conflict accures when you attempt to merge two different branches and they modified the same lines of codes and Git can not figure out which one to use.  
+It's a very common thing and nothing to be worry about when it accures, because in most cases it can be resolved with minimum effort and comparing the codes and accept one or the other or both changes in some cases.  
+if you are not sure to do at this point your best option is to use this command:
+```
+git merge --abort
+```
+it will take you back to the original state before that merge started.  
+The buttom line though is that when you encounter one the first step is to just figure out which files is effected and choose the correct code, once thats done just commited and you are good to go.  
+
+---
+```
+git log
+```
+show the commit history for the currently active branch.
+```
+git log branchB..BranchA
+```
+Show the commits on branchA that are not branchB.
+```
+git log --follow [file]
+```
+show the commits that changed file, even across renames.
+```
+git diff branchB...branchA
+```
+show the diff of what is in branchA that is not in branchB.
+```
+git show [SHA]
+```
+show any object in Git in human-readable format.
+
+---
