@@ -38,3 +38,41 @@ retrieve an entire repository from a hosted location via URL.
 
 ---
 
+### **STAGE & SNAPSHOT**
+Working with snapshots and the Git staging area.    
+```
+git status
+```
+show modified files in working directory, staged for your next commit.  
+```
+git add [file]
+```
+add a file as it looks now to your next commit (stage).  
+```
+git add .
+```
+representing all the files in the corrent working directory or any other files that changed since the last commit.
+```
+git reset [file]
+```
+unstage a file while retianing the changes in working directory.
+```
+git reset .
+```
+unstage all files.
+```
+git diff
+```
+diff of what is changed but not staged.
+```
+git diff --staged
+```
+diff of what is staged but not yet committed.
+```
+git commit -m "descriptive message"
+```
+commit your staged content as a new commit snapshot.
+```
+git commit -a -m "descriptive message"
+```
+more efficent shortcut if you want to skip the **`add`** command, you can just go straight to **`git commit`** and use **`-a`** flag which will add all the files in the corrent working directory, the add a message after that to wrap-up the entire process in a single command.
